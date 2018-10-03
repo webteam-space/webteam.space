@@ -4,12 +4,12 @@
     <title>
       WEBTEAM.SPACE
     </title>
-<style>
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
+    <style>
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
+}
 
   .blink {
     animation: blink .5s linear infinite;
@@ -29,15 +29,43 @@
   }
 
   h2 { color: white; }
-</style>
+
+  #distance-wrapper {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid white;
+    padding: 0 1rem;
+    border-radius: 3px;
+    box-shadow: 0 0 5px black;
+  }
+  #distance-bar {
+    background: #a80077;
+    background: -webkit-linear-gradient(to right, #66ff00, #a80077);
+    background: linear-gradient(to right, #66ff00, #a80077); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  #distance {
+    color: white;
+    text-shadow: 0 0 5px black;
+    z-index: 1;
+    position: relative;
+  }
+    </style>
   </head>
   <body style="background: #000 url('img/webteam.space.jpg'); background-size: cover; text-align:
-    center;">
+  center;">
     <h1 style="color: #0ffff0; font-size: 8rem;">
       <span class="blink">
         you have found webteam</span><small class="blink2" style="color: #f0000f;">.space</small>
     </h1>
-    <h2 id="distance"></h2>
+    <div id="distance-wrapper">
+      <h2 id="distance"></h2>
+      <div id="distance-bar"></div>
+    </div>
     <ul>
       <li><a href="http://toto.space">TOTO.SPACE</a></li>
       <li><a href="http://lukewh.space">LUKEWH.SPACE</a></li>
@@ -54,7 +82,7 @@
 
     <script src="iteration.js"></script>
     <script>
-     document.querySelector("audio").play()
+      document.querySelector("audio").play()
     </script>
   </body>
 </html>

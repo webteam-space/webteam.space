@@ -20,7 +20,7 @@ var today = getStartOfDay(new Date());
 
 var week = new Date().getWeekNumber();
 var distance = document.getElementById('distance');
-var form = document.getElementById('start-end');
+var distanceBar = document.getElementById('distance-bar');
 
 distance.innerHTML = week;
 
@@ -52,8 +52,12 @@ function workItOut() {
     var length = end - start;
     var place = now - start;
 
-    distance.innerHTML = '<p>We are <b>' + Math.round((place / length) * 100) + '%</b> through the iteration</p>';
+    var percentage = Math.round((place / length) * 100);
+
+    distance.innerHTML = '<p>We are <b>' + percentage + '%</b> through the iteration</p>';
+    distanceBar.style.width = percentage + '%';
   }
 }
 
 workItOut();
+
